@@ -31,13 +31,14 @@ class MLPositionManager:
     def _load_model(self):
         """بارگذاری مدل ML از دیسک"""
         try:
-            # مسیر مدل‌ها
-            base_path = Path(__file__).parent.parent.parent
-            model_path = base_path / self.symbol / 'ml_models' / 'best_model.pkl'
-            scaler_path = base_path / self.symbol / 'ml_models' / 'scaler.pkl'
+            # مسیر مدل‌ها - در همان پوشه ربات
+            current_dir = Path(__file__).parent
+            model_path = current_dir / 'ml_models' / 'best_model.pkl'
+            scaler_path = current_dir / 'ml_models' / 'scaler.pkl'
             
             if not model_path.exists():
                 print(f"⚠️ ML Model not found at {model_path}")
+                print(f"   Searched in: {current_dir / 'ml_models'}")
                 print(f"   ML position management DISABLED")
                 return
             
