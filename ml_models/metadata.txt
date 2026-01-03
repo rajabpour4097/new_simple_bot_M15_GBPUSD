@@ -1,0 +1,2 @@
+best_model_name: Gradient_Boosting
+models_trained: ['Logistic_Regression', 'Decision_Tree', 'Random_Forest', 'Gradient_Boosting', 'Neural_Network']
