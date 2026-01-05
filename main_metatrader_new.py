@@ -652,13 +652,13 @@ def main():
                         trade_type = final_direction
                         trade_sl = final_sl
                         trade_tp = final_tp
-                        trade_comment = f"REVERSED Swing (M15 {m15_info.get('direction', '')} {m15_info.get('body_ratio', 0):.0f}%)"
+                        trade_comment = f"REV M15 {m15_info.get('direction', '')[:4]} {m15_info.get('body_ratio', 0):.0f}"
                     else:
                         log(f'✅ Executing ORIGINAL position: BUY', color='green')
                         trade_type = 'buy'
                         trade_sl = stop
                         trade_tp = reward_end
-                        trade_comment = f"Bullish Swing {last_swing_type}"
+                        trade_comment = f"Bull Swing"
                     
                     log(f'Final trade: {trade_type.upper()} | SL={trade_sl:.5f} | TP={trade_tp:.5f}', color='cyan')
                     
@@ -922,13 +922,13 @@ def main():
                         trade_type = final_direction
                         trade_sl = final_sl
                         trade_tp = final_tp
-                        trade_comment = f"REVERSED Swing (M15 {m15_info.get('direction', '')} {m15_info.get('body_ratio', 0):.0f}%)"
+                        trade_comment = f"REV M15 {m15_info.get('direction', '')[:4]} {m15_info.get('body_ratio', 0):.0f}"
                     else:
                         log(f'✅ Executing ORIGINAL position: SELL', color='green')
                         trade_type = 'sell'
                         trade_sl = stop
                         trade_tp = reward_end
-                        trade_comment = f"Bearish Swing {last_swing_type}"
+                        trade_comment = f"Bear Swing"
                     
                     log(f'Final trade: {trade_type.upper()} | SL={trade_sl:.5f} | TP={trade_tp:.5f}', color='cyan')
                     
